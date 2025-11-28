@@ -43,39 +43,39 @@ const LandingPage = () => {
 
   const features = [
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Lightning Fast Execution',
-      description: 'Sub-millisecond trade execution with enterprise-grade infrastructure.',
+      icon: <Layers className="w-8 h-8" />,
+      title: 'B-Book Dealing Desk',
+      description: '"God Mode" order intervention, manage PnL, set spreads, and custom slippage controls.',
       gradient: 'from-yellow-500 to-orange-500',
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Bank-Grade Security',
-      description: 'Multi-layer encryption and secure cold storage for all assets.',
+      icon: <Activity className="w-8 h-8" />,
+      title: 'Real-Time Price Feeds',
+      description: 'Live FX, Gold, and Indices pricing across 50+ assets with instant updates.',
       gradient: 'from-green-500 to-emerald-500',
     },
     {
-      icon: <Activity className="w-8 h-8" />,
-      title: 'Real-Time Analytics',
-      description: 'Advanced charting and market analysis tools powered by AI.',
+      icon: <BarChart3 className="w-8 h-8" />,
+      title: 'Complete Admin Panel',
+      description: 'Full control over risk management, orders, and client management in one dashboard.',
       gradient: 'from-cyan-500 to-blue-500',
     },
     {
-      icon: <BarChart3 className="w-8 h-8" />,
-      title: 'Smart Trading Bots',
-      description: 'Automated strategies with customizable risk parameters.',
+      icon: <Users className="w-8 h-8" />,
+      title: 'CRM & KYC Integration',
+      description: 'Manage leads, documents, verification workflows, and assign agents seamlessly.',
       gradient: 'from-purple-500 to-pink-500',
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: 'Global Market Access',
-      description: 'Trade Forex, Crypto, Commodities & Indices 24/7.',
+      title: 'Crypto Deposits & Withdrawals',
+      description: 'USDT/ERC20 and TRC20 integration directly to your wallet. No code required.',
       gradient: 'from-indigo-500 to-purple-500',
     },
     {
-      icon: <Lock className="w-8 h-8" />,
-      title: 'Regulatory Compliance',
-      description: 'Fully licensed and compliant with international regulations.',
+      icon: <Shield className="w-8 h-8" />,
+      title: 'White-Label Ready',
+      description: 'Full SaaS integration with your own branding, logo, and colors. Launch instantly.',
       gradient: 'from-rose-500 to-red-500',
     },
   ];
@@ -103,48 +103,48 @@ const LandingPage = () => {
 
   const pricing = [
     {
-      name: 'Starter',
-      price: '$99',
+      name: 'Pay-As-You-Go',
+      price: '$299',
       period: '/month',
-      description: 'Perfect for individual traders',
+      description: 'Perfect for getting started',
       features: [
-        'Up to 10 trading pairs',
-        'Basic analytics dashboard',
+        'Full B-Book dealing desk',
+        'Real-time price feeds (50+ assets)',
+        'Basic admin panel',
         'Email support',
-        'Mobile app access',
-        '1% trading fee',
+        'Crypto deposit/withdrawal',
       ],
       cta: 'Get Started',
       popular: false,
     },
     {
       name: 'Professional',
-      price: '$299',
+      price: '$799',
       period: '/month',
-      description: 'For serious traders & small brokerages',
+      description: 'For growing brokerages',
       features: [
-        'Unlimited trading pairs',
-        'Advanced analytics & AI insights',
+        'Everything in Pay-As-You-Go',
+        'Complete CRM & KYC system',
+        'Custom risk engine',
         'Priority 24/7 support',
-        'API access',
-        '0.5% trading fee',
-        'Custom integrations',
+        'White-label branding',
+        'Full trade audit trails',
       ],
       cta: 'Start Free Trial',
       popular: true,
     },
     {
-      name: 'Enterprise',
-      price: 'Custom',
+      name: 'Lifetime',
+      price: 'One-Time',
       period: '',
-      description: 'Full white-label brokerage solution',
+      description: 'Full ownership, no recurring fees',
       features: [
         'Everything in Professional',
-        'White-label platform',
-        'Dedicated account manager',
-        'Custom liquidity pools',
-        'Volume-based pricing',
-        'SLA guarantee',
+        'Dedicated server setup',
+        'Custom price/fee logic',
+        'Operator overrides',
+        'Priority updates forever',
+        'No monthly payments',
       ],
       cta: 'Contact Sales',
       popular: false,
@@ -153,29 +153,34 @@ const LandingPage = () => {
 
   const faqs = [
     {
-      question: 'How quickly can I get started?',
+      question: 'What is included when I purchase NEXUS FX?',
       answer:
-        'You can create an account and start trading within 24 hours. Our streamlined KYC process ensures fast verification while maintaining regulatory compliance.',
+        'You get the complete institutional-grade white label Forex brokerage solution including B-Book dealing desk, real-time price feeds for 50+ assets, complete admin panel, CRM & KYC integration, crypto deposit/withdrawal, and full reporting tools.',
     },
     {
-      question: 'What markets can I access?',
+      question: 'Do I need developers or technical knowledge?',
       answer:
-        'NEXUS FX provides access to major Forex pairs, cryptocurrencies, commodities (Gold, Silver, Oil), and global stock indices. Trade 24/7 with deep liquidity.',
+        'No code required! We handle updates, security, and hosting for you. Focus on sales and growing your business - you don\'t need developers, servers, or devops expertise.',
     },
     {
-      question: 'Is my money safe?',
+      question: 'What markets and assets can my clients trade?',
       answer:
-        'Absolutely. We use bank-grade encryption, cold storage for digital assets, and maintain segregated client accounts. We\'re fully licensed and regulated.',
+        'NEXUS FX provides access to major Forex pairs, Gold, Indices, and more across 50+ assets. All with real-time price feeds and lightning-fast execution.',
     },
     {
-      question: 'Do you offer white-label solutions?',
+      question: 'How does the white-label solution work?',
       answer:
-        'Yes! Our Enterprise plan includes a fully customizable white-label platform. Launch your own brokerage with our technology stack and liquidity.',
+        'Our Enterprise and Lifetime plans include full SaaS/white-label integration ready for your own branding, logo, and colors. Backend integration with admin controls, custom risk engine, and operator overrides are all included.',
     },
     {
-      question: 'What support options are available?',
+      question: 'What crypto payment options are supported?',
       answer:
-        'We offer 24/7 support via live chat, email, and phone for Professional and Enterprise clients. Starter plans include email support during business hours.',
+        'We support USDT deposits and withdrawals via ERC20 and TRC20 networks directly to your wallet. No additional payment processor required.',
+    },
+    {
+      question: 'What is the difference between monthly and Lifetime plans?',
+      answer:
+        'Monthly plans offer flexibility with ongoing updates and support. The Lifetime plan is a one-time payment with full ownership, priority updates forever, dedicated server setup, and no recurring monthly fees.',
     },
   ];
 
@@ -252,9 +257,9 @@ const LandingPage = () => {
               variants={fadeInUp}
               className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 mb-10"
             >
-              Launch your fully licensed brokerage or trade with institutional-grade
-              tools. Lightning-fast execution, bank-grade security, and 24/7 global
-              market access.
+              The all-in-one white label brokerage solution. B-Book dealing desk,
+              real-time price feeds, CRM & KYC, crypto payments - everything included.
+              No code required.
             </motion.p>
 
             <motion.div
@@ -332,15 +337,15 @@ const LandingPage = () => {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
             >
-              <span className="text-white">Enterprise-Grade</span>{' '}
-              <span className="gradient-text">Trading Features</span>
+              <span className="text-white">Everything Included in</span>{' '}
+              <span className="gradient-text">Your Brokerage</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="max-w-2xl mx-auto text-gray-400 text-lg"
             >
-              Everything you need to trade like the institutions or launch your own
-              brokerage.
+              Get instant access to the full institutional-grade white label solution.
+              No code required.
             </motion.p>
           </motion.div>
 
