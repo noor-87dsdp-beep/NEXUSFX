@@ -27,7 +27,7 @@ When you purchase from NEXUS FX, you gain instant access to the full institution
 ### Why Choose NEXUS FX?
 
 - We handle updates, security, and hosting for you
-- Focus on sales: you don't need developers, servers, or devops
+- Focus on sales: you don't need developers, servers, or DevOps
 - Scale at your pace: from pay-as-you-go to one-time Lifetime access
 
 ## Getting Started

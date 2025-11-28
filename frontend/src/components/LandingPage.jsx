@@ -160,7 +160,7 @@ const LandingPage = () => {
     {
       question: 'Do I need developers or technical knowledge?',
       answer:
-        'No code required! We handle updates, security, and hosting for you. Focus on sales and growing your business - you don\'t need developers, servers, or devops expertise.',
+        'No code required! We handle updates, security, and hosting for you. Focus on sales and growing your business - you don\'t need developers, servers, or DevOps expertise.',
     },
     {
       question: 'What markets and assets can my clients trade?',
