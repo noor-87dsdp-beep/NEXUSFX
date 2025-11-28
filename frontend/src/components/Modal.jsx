@@ -2,6 +2,10 @@ import React, { useEffect, useCallback, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, User, Mail, Send, Check, AlertCircle } from 'lucide-react';
 
+// Validation patterns
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const TELEGRAM_NUMERIC_PATTERN = /^\d+$/;
+
 const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -56,13 +60,13 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
 
     if (!formData.telegram.trim()) {
       newErrors.telegram = 'Telegram ID is required';
-    } else if (!formData.telegram.startsWith('@') && !/^\d+$/.test(formData.telegram)) {
+    } else if (!formData.telegram.startsWith('@') && !TELEGRAM_NUMERIC_PATTERN.test(formData.telegram)) {
       newErrors.telegram = 'Enter a valid Telegram username (@username) or ID';
     }
 
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    } else if (!EMAIL_PATTERN.test(formData.email)) {
       newErrors.email = 'Enter a valid email address';
     }
 
@@ -194,7 +198,7 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                     Request Submitted!
                   </h3>
                   <p className="mt-2 text-gray-400">
-                    We&apos;ll reach out shortly.
+                    We'll reach out shortly.
                   </p>
                 </motion.div>
               ) : (

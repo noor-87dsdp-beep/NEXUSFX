@@ -562,7 +562,7 @@ const LandingPage = () => {
               variants={fadeInUp}
               className="text-gray-400 text-lg"
             >
-              Got questions? We&apos;ve got answers.
+              Got questions? We've got answers.
             </motion.p>
           </motion.div>
 
