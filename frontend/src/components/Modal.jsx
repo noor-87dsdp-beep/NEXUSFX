@@ -1,0 +1,358 @@
+import React, { useEffect, useCallback, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, User, Mail, Send, Check, AlertCircle } from 'lucide-react';
+
+const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    telegram: '',
+    email: '',
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const modalRef = useRef(null);
+  const firstInputRef = useRef(null);
+
+  // Focus trap
+  useEffect(() => {
+    if (isOpen && firstInputRef.current) {
+      firstInputRef.current.focus();
+    }
+  }, [isOpen]);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen, onClose]);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const validateForm = useCallback(() => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters';
+    }
+
+    if (!formData.telegram.trim()) {
+      newErrors.telegram = 'Telegram ID is required';
+    } else if (!formData.telegram.startsWith('@') && !/^\d+$/.test(formData.telegram)) {
+      newErrors.telegram = 'Enter a valid Telegram username (@username) or ID';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Enter a valid email address';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  }, [formData]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+
+    // Reset form after delay
+    setTimeout(() => {
+      setFormData({ name: '', telegram: '', email: '' });
+      setIsSubmitted(false);
+      onClose();
+    }, 2000);
+  };
+
+  const handleChange = (field) => (e) => {
+    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: '' }));
+    }
+  };
+
+  const backdropVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const modalVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 50 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { type: 'spring', damping: 25, stiffness: 300 },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.8,
+      y: 50,
+      transition: { duration: 0.2 },
+    },
+  };
+
+  const inputVariants = {
+    focus: { scale: 1.02, boxShadow: '0 0 0 2px rgba(34, 197, 94, 0.5)' },
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
+          {/* Backdrop */}
+          <motion.div
+            variants={backdropVariants}
+            className="absolute inset-0 bg-black/70 backdrop-blur-md"
+            onClick={onClose}
+            aria-hidden="true"
+          />
+
+          {/* Modal */}
+          <motion.div
+            ref={modalRef}
+            variants={modalVariants}
+            className="relative w-full max-w-md bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-green-500/10 overflow-hidden"
+          >
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-cyan-500/5 pointer-events-none" />
+
+            {/* Header */}
+            <div className="relative px-6 pt-6 pb-4 border-b border-white/10">
+              <h2
+                id="modal-title"
+                className="text-2xl font-bold gradient-text"
+              >
+                {title}
+              </h2>
+              <p className="mt-1 text-sm text-gray-400">
+                Join the future of Forex brokerage technology
+              </p>
+              <motion.button
+                onClick={onClose}
+                className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </motion.button>
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="relative p-6 space-y-5">
+              {isSubmitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="py-8 text-center"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', delay: 0.2 }}
+                    className="w-16 h-16 mx-auto mb-4 bg-green-500/20 rounded-full flex items-center justify-center"
+                  >
+                    <Check className="w-8 h-8 text-green-400" />
+                  </motion.div>
+                  <h3 className="text-xl font-semibold text-white">
+                    Request Submitted!
+                  </h3>
+                  <p className="mt-2 text-gray-400">
+                    We&apos;ll reach out shortly.
+                  </p>
+                </motion.div>
+              ) : (
+                <>
+                  {/* Name Field */}
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
+                      Full Name
+                    </label>
+                    <motion.div
+                      className="relative"
+                      whileFocus="focus"
+                    >
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+                      <motion.input
+                        ref={firstInputRef}
+                        id="name"
+                        type="text"
+                        value={formData.name}
+                        onChange={handleChange('name')}
+                        variants={inputVariants}
+                        whileFocus="focus"
+                        className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${
+                          errors.name ? 'border-red-500' : 'border-white/10'
+                        } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors`}
+                        placeholder="John Doe"
+                        aria-describedby={errors.name ? 'name-error' : undefined}
+                        aria-invalid={!!errors.name}
+                      />
+                    </motion.div>
+                    {errors.name && (
+                      <motion.p
+                        id="name-error"
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-1 text-sm text-red-400 flex items-center gap-1"
+                        role="alert"
+                      >
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.name}
+                      </motion.p>
+                    )}
+                  </div>
+
+                  {/* Telegram Field */}
+                  <div>
+                    <label
+                      htmlFor="telegram"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
+                      Telegram ID
+                    </label>
+                    <motion.div className="relative">
+                      <Send className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+                      <motion.input
+                        id="telegram"
+                        type="text"
+                        value={formData.telegram}
+                        onChange={handleChange('telegram')}
+                        variants={inputVariants}
+                        whileFocus="focus"
+                        className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${
+                          errors.telegram ? 'border-red-500' : 'border-white/10'
+                        } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors`}
+                        placeholder="@username"
+                        aria-describedby={errors.telegram ? 'telegram-error' : undefined}
+                        aria-invalid={!!errors.telegram}
+                      />
+                    </motion.div>
+                    {errors.telegram && (
+                      <motion.p
+                        id="telegram-error"
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-1 text-sm text-red-400 flex items-center gap-1"
+                        role="alert"
+                      >
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.telegram}
+                      </motion.p>
+                    )}
+                  </div>
+
+                  {/* Email Field */}
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
+                      Email Address
+                    </label>
+                    <motion.div className="relative">
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+                      <motion.input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange('email')}
+                        variants={inputVariants}
+                        whileFocus="focus"
+                        className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${
+                          errors.email ? 'border-red-500' : 'border-white/10'
+                        } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors`}
+                        placeholder="john@example.com"
+                        aria-describedby={errors.email ? 'email-error' : undefined}
+                        aria-invalid={!!errors.email}
+                      />
+                    </motion.div>
+                    {errors.email && (
+                      <motion.p
+                        id="email-error"
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-1 text-sm text-red-400 flex items-center gap-1"
+                        role="alert"
+                      >
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.email}
+                      </motion.p>
+                    )}
+                  </div>
+
+                  {/* Submit Button */}
+                  <motion.button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-3 px-6 bg-gradient-to-r from-green-500 to-cyan-500 text-white font-semibold rounded-lg shadow-lg shadow-green-500/25 hover:shadow-green-500/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                    whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                    whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <motion.span
+                          className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                        />
+                        Submitting...
+                      </span>
+                    ) : (
+                      'Request Demo Access'
+                    )}
+                  </motion.button>
+
+                  <p className="text-xs text-gray-500 text-center">
+                    By submitting, you agree to our Terms of Service and Privacy Policy
+                  </p>
+                </>
+              )}
+            </form>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+export default Modal;
