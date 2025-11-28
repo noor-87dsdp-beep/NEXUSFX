@@ -17,6 +17,9 @@ import {
   TrendingUp,
   Clock,
   Headphones,
+  Target,
+  Lightbulb,
+  Award,
 } from 'lucide-react';
 import Navbar from './Navbar';
 import Modal from './Modal';
@@ -322,6 +325,109 @@ const LandingPage = () => {
 
       {/* Ticker Tape */}
       <TickerTape />
+
+      {/* Mission Section */}
+      <section id="mission" className="py-24 px-4 bg-black/30">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.div
+              variants={fadeInUp}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6"
+            >
+              <Target className="w-4 h-4 text-green-400" />
+              <span className="text-sm text-gray-300">Our Mission</span>
+            </motion.div>
+
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
+            >
+              <span className="text-white">Empowering You to Become a</span>{' '}
+              <span className="gradient-text">Platform Operator</span>
+            </motion.h2>
+
+            <motion.p
+              variants={fadeInUp}
+              className="max-w-3xl mx-auto text-gray-400 text-lg mb-8"
+            >
+              NEXUS FX is a <strong className="text-white">trading platform software provider</strong>, 
+              not a trading service. We provide the complete infrastructure for you to launch and operate 
+              your own Forex brokerage—transforming you from a market participant into a market maker.
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {/* Mission Card 1 */}
+            <motion.div variants={fadeInUp}>
+              <TiltCard intensity={8}>
+                <div className="h-full p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl text-center">
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white mb-4">
+                    <Lightbulb className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    What We Provide
+                  </h3>
+                  <p className="text-gray-400">
+                    A complete, institutional-grade white-label brokerage platform. 
+                    Everything you need to run your own trading business—dealing desk, 
+                    price feeds, CRM, KYC, and payment processing.
+                  </p>
+                </div>
+              </TiltCard>
+            </motion.div>
+
+            {/* Mission Card 2 */}
+            <motion.div variants={fadeInUp}>
+              <TiltCard intensity={8}>
+                <div className="h-full p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl text-center">
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white mb-4">
+                    <Target className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    Our Core Mission
+                  </h3>
+                  <p className="text-gray-400">
+                    To democratize access to professional trading infrastructure. 
+                    We believe anyone should be able to launch their own brokerage 
+                    without needing technical expertise or massive capital.
+                  </p>
+                </div>
+              </TiltCard>
+            </motion.div>
+
+            {/* Mission Card 3 */}
+            <motion.div variants={fadeInUp}>
+              <TiltCard intensity={8}>
+                <div className="h-full p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl text-center">
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white mb-4">
+                    <Award className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    Your Transformation
+                  </h3>
+                  <p className="text-gray-400">
+                    Stop being just a trader. With NEXUS FX, become a platform operator 
+                    with full control over your brokerage business, your clients, 
+                    and your revenue streams.
+                  </p>
+                </div>
+              </TiltCard>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section id="features" className="py-24 px-4">
@@ -695,6 +801,9 @@ const LandingPage = () => {
             </div>
 
             <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+              <a href="#mission" onClick={(e) => scrollToSection(e, '#mission')} className="hover:text-green-400 transition-colors">
+                Mission
+              </a>
               <a href="#features" onClick={(e) => scrollToSection(e, '#features')} className="hover:text-green-400 transition-colors">
                 Features
               </a>
