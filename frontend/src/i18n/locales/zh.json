@@ -205,6 +205,7 @@
     "liveMarketPrices": "实时市场价格更新中"
   },
   "language": {
+    "selectLanguage": "选择语言",
     "en": "English",
     "bn": "বাংলা",
     "zh": "中文",

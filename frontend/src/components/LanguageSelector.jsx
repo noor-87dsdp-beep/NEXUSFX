@@ -11,7 +11,7 @@ const languages = [
 ];
 
 const LanguageSelector = ({ isMobile = false }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -52,7 +52,7 @@ const LanguageSelector = ({ isMobile = false }) => {
   if (isMobile) {
     return (
       <div className="w-full">
-        <p className="text-sm text-gray-400 mb-2">Select Language</p>
+        <p className="text-sm text-gray-400 mb-2">{t('language.selectLanguage')}</p>
         <div className="grid grid-cols-2 gap-2">
           {languages.map((language) => (
             <button

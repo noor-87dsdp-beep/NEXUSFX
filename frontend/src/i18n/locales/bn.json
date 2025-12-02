@@ -205,6 +205,7 @@
     "liveMarketPrices": "লাইভ মার্কেট প্রাইস আপডেট হচ্ছে"
   },
   "language": {
+    "selectLanguage": "ভাষা নির্বাচন করুন",
     "en": "English",
     "bn": "বাংলা",
     "zh": "中文",
