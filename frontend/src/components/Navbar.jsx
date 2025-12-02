@@ -1,17 +1,20 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Zap } from 'lucide-react';
+import LanguageSelector from './LanguageSelector';
 
 const Navbar = ({ onOpenModal }) => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Mission', href: '#mission' },
-    { label: 'Features', href: '#features' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'FAQ', href: '#faq' },
+    { label: t('nav.mission'), href: '#mission' },
+    { label: t('nav.features'), href: '#features' },
+    { label: t('nav.howItWorks'), href: '#how-it-works' },
+    { label: t('nav.pricing'), href: '#pricing' },
+    { label: t('nav.faq'), href: '#faq' },
   ];
 
   useEffect(() => {
@@ -76,7 +79,7 @@ const Navbar = ({ onOpenModal }) => {
             </motion.a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
                 <motion.a
                   key={link.href}
@@ -90,13 +93,14 @@ const Navbar = ({ onOpenModal }) => {
                   {link.label}
                 </motion.a>
               ))}
+              <LanguageSelector />
               <motion.button
                 onClick={onOpenModal}
                 className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-cyan-500 text-white font-semibold rounded-lg shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Get Demo Access
+                {t('nav.getDemoAccess')}
               </motion.button>
             </div>
 
@@ -158,6 +162,15 @@ const Navbar = ({ onOpenModal }) => {
                   ))}
                 </nav>
 
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.35 }}
+                  className="mt-6"
+                >
+                  <LanguageSelector isMobile />
+                </motion.div>
+
                 <motion.button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
@@ -165,10 +178,10 @@ const Navbar = ({ onOpenModal }) => {
                   }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="mt-8 w-full px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-500 text-white font-semibold rounded-lg shadow-lg"
+                  transition={{ delay: 0.45 }}
+                  className="mt-6 w-full px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-500 text-white font-semibold rounded-lg shadow-lg"
                 >
-                  Get Demo Access
+                  {t('nav.getDemoAccess')}
                 </motion.button>
 
                 {/* Close button in mobile menu */}

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 
 const TickerTape = () => {
+  const { t } = useTranslation();
   const [tickerData, setTickerData] = useState([
     { pair: 'EUR/USD', price: 1.0852, change: 0.15, isUp: true },
     { pair: 'GBP/USD', price: 1.2743, change: -0.08, isUp: false },
@@ -98,7 +100,7 @@ const TickerTape = () => {
 
       {/* Screen reader announcement for accessibility */}
       <div className="sr-only" aria-live="polite">
-        Live market prices updating
+        {t('ticker.liveMarketPrices')}
       </div>
     </section>
   );
