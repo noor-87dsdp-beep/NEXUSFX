@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "mission": "Mission",
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "getDemoAccess": "Get Demo Access"
+  },
+  "hero": {
+    "trustedBy": "Trusted by 10,000+ traders worldwide",
+    "theFutureOf": "The Future of",
+    "forexBrokerage": "Forex Brokerage",
+    "description": "The all-in-one white label brokerage solution. B-Book dealing desk, real-time price feeds, CRM & KYC, crypto payments - everything included. No code required.",
+    "startYourBrokerage": "Start Your Brokerage",
+    "exploreFeatures": "Explore Features",
+    "dailyVolume": "Daily Volume",
+    "uptime": "Uptime",
+    "execution": "Execution",
+    "countries": "Countries"
+  },
+  "mission": {
+    "badge": "Our Mission",
+    "title1": "Empowering You to Become a",
+    "title2": "Platform Operator",
+    "description": "NEXUS FX is a trading platform software provider, not a trading service. We provide the complete infrastructure for you to launch and operate your own Forex brokerage—transforming you from a market participant into a market maker.",
+    "whatWeProvide": {
+      "title": "What We Provide",
+      "description": "A complete, institutional-grade white-label brokerage platform. Everything you need to run your own trading business—dealing desk, price feeds, CRM, KYC, and payment processing."
+    },
+    "ourCoreMission": {
+      "title": "Our Core Mission",
+      "description": "To democratize access to professional trading infrastructure. We believe anyone should be able to launch their own brokerage without needing technical expertise or massive capital."
+    },
+    "yourTransformation": {
+      "title": "Your Transformation",
+      "description": "Stop being just a trader. With NEXUS FX, become a platform operator with full control over your brokerage business, your clients, and your revenue streams."
+    }
+  },
+  "features": {
+    "title1": "Everything Included in",
+    "title2": "Your Brokerage",
+    "description": "Get instant access to the full institutional-grade white label solution. No code required.",
+    "bBookDealingDesk": {
+      "title": "B-Book Dealing Desk",
+      "description": "\"God Mode\" order intervention, manage PnL, set spreads, and custom slippage controls."
+    },
+    "realTimePriceFeeds": {
+      "title": "Real-Time Price Feeds",
+      "description": "Live FX, Gold, and Indices pricing across 50+ assets with instant updates."
+    },
+    "completeAdminPanel": {
+      "title": "Complete Admin Panel",
+      "description": "Full control over risk management, orders, and client management in one dashboard."
+    },
+    "crmKycIntegration": {
+      "title": "CRM & KYC Integration",
+      "description": "Manage leads, documents, verification workflows, and assign agents seamlessly."
+    },
+    "cryptoDeposits": {
+      "title": "Crypto Deposits & Withdrawals",
+      "description": "USDT/ERC20 and TRC20 integration directly to your wallet. No code required."
+    },
+    "whiteLabelReady": {
+      "title": "White-Label Ready",
+      "description": "Full SaaS integration with your own branding, logo, and colors. Launch instantly."
+    }
+  },
+  "howItWorks": {
+    "title1": "Get Started in",
+    "title2": "3 Simple Steps",
+    "description": "Join thousands of traders who have already discovered the NEXUS FX advantage.",
+    "step1": {
+      "title": "Create Account",
+      "description": "Sign up in minutes with our streamlined KYC process."
+    },
+    "step2": {
+      "title": "Fund Your Wallet",
+      "description": "Deposit via crypto, bank transfer, or card."
+    },
+    "step3": {
+      "title": "Start Trading",
+      "description": "Access global markets and start building wealth."
+    }
+  },
+  "pricing": {
+    "title1": "Simple, Transparent",
+    "title2": "Pricing",
+    "description": "Choose the plan that fits your trading needs. All plans include our core platform features.",
+    "mostPopular": "Most Popular",
+    "payAsYouGo": {
+      "name": "Pay-As-You-Go",
+      "price": "$299",
+      "period": "/month",
+      "description": "Perfect for getting started",
+      "features": {
+        "1": "Full B-Book dealing desk",
+        "2": "Real-time price feeds (50+ assets)",
+        "3": "Basic admin panel",
+        "4": "Email support",
+        "5": "Crypto deposit/withdrawal"
+      },
+      "cta": "Get Started"
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "$799",
+      "period": "/month",
+      "description": "For growing brokerages",
+      "features": {
+        "1": "Everything in Pay-As-You-Go",
+        "2": "Complete CRM & KYC system",
+        "3": "Custom risk engine",
+        "4": "Priority 24/7 support",
+        "5": "White-label branding",
+        "6": "Full trade audit trails"
+      },
+      "cta": "Start Free Trial"
+    },
+    "lifetime": {
+      "name": "Lifetime",
+      "price": "One-Time",
+      "period": "",
+      "description": "Full ownership, no recurring fees",
+      "features": {
+        "1": "Everything in Professional",
+        "2": "Dedicated server setup",
+        "3": "Custom price/fee logic",
+        "4": "Operator overrides",
+        "5": "Priority updates forever",
+        "6": "No monthly payments"
+      },
+      "cta": "Contact Sales"
+    }
+  },
+  "faq": {
+    "title1": "Frequently Asked",
+    "title2": "Questions",
+    "description": "Got questions? We've got answers.",
+    "q1": {
+      "question": "What is included when I purchase NEXUS FX?",
+      "answer": "You get the complete institutional-grade white label Forex brokerage solution including B-Book dealing desk, real-time price feeds for 50+ assets, complete admin panel, CRM & KYC integration, crypto deposit/withdrawal, and full reporting tools."
+    },
+    "q2": {
+      "question": "Do I need developers or technical knowledge?",
+      "answer": "No code required! We handle updates, security, and hosting for you. Focus on sales and growing your business - you don't need developers, servers, or DevOps expertise."
+    },
+    "q3": {
+      "question": "What markets and assets can my clients trade?",
+      "answer": "NEXUS FX provides access to major Forex pairs, Gold, Indices, and more across 50+ assets. All with real-time price feeds and lightning-fast execution."
+    },
+    "q4": {
+      "question": "How does the white-label solution work?",
+      "answer": "Our Enterprise and Lifetime plans include full SaaS/white-label integration ready for your own branding, logo, and colors. Backend integration with admin controls, custom risk engine, and operator overrides are all included."
+    },
+    "q5": {
+      "question": "What crypto payment options are supported?",
+      "answer": "We support USDT deposits and withdrawals via ERC20 and TRC20 networks directly to your wallet. No additional payment processor required."
+    },
+    "q6": {
+      "question": "What is the difference between monthly and Lifetime plans?",
+      "answer": "Monthly plans offer flexibility with ongoing updates and support. The Lifetime plan is a one-time payment with full ownership, priority updates forever, dedicated server setup, and no recurring monthly fees."
+    }
+  },
+  "cta": {
+    "badge": "Limited spots available",
+    "title1": "Ready to Transform",
+    "title2": "Your Trading Journey?",
+    "description": "Join thousands of traders and brokerages who trust NEXUS FX for their success. Start your free trial today.",
+    "supportAvailable": "24/7 Support Available"
+  },
+  "footer": {
+    "mission": "Mission",
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "© {{year}} NEXUS FX. All rights reserved."
+  },
+  "modal": {
+    "title": "Get Demo Access",
+    "subtitle": "Join the future of Forex brokerage technology",
+    "fullName": "Full Name",
+    "telegramId": "Telegram ID",
+    "emailAddress": "Email Address",
+    "namePlaceholder": "John Doe",
+    "telegramPlaceholder": "@username",
+    "emailPlaceholder": "john@example.com",
+    "submit": "Request Demo Access",
+    "submitting": "Submitting...",
+    "submitted": "Request Submitted!",
+    "submittedMessage": "We'll reach out shortly.",
+    "termsNotice": "By submitting, you agree to our Terms of Service and Privacy Policy",
+    "errors": {
+      "nameRequired": "Name is required",
+      "nameMinLength": "Name must be at least 2 characters",
+      "telegramRequired": "Telegram ID is required",
+      "telegramInvalid": "Enter a valid Telegram username (@username) or ID",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email address"
+    }
+  },
+  "ticker": {
+    "liveMarketPrices": "Live market prices updating"
+  },
+  "language": {
+    "en": "English",
+    "bn": "বাংলা",
+    "zh": "中文",
+    "km": "ភាសាខ្មែរ"
+  }
+}

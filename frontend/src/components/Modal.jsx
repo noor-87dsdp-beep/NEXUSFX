@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, User, Mail, Send, Check, AlertCircle } from 'lucide-react';
 
@@ -6,7 +7,8 @@ import { X, User, Mail, Send, Check, AlertCircle } from 'lucide-react';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const TELEGRAM_NUMERIC_PATTERN = /^\d+$/;
 
-const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
+const Modal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     telegram: '',
@@ -53,26 +55,26 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = t('modal.errors.nameRequired');
     } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'Name must be at least 2 characters';
+      newErrors.name = t('modal.errors.nameMinLength');
     }
 
     if (!formData.telegram.trim()) {
-      newErrors.telegram = 'Telegram ID is required';
+      newErrors.telegram = t('modal.errors.telegramRequired');
     } else if (!formData.telegram.startsWith('@') && !TELEGRAM_NUMERIC_PATTERN.test(formData.telegram)) {
-      newErrors.telegram = 'Enter a valid Telegram username (@username) or ID';
+      newErrors.telegram = t('modal.errors.telegramInvalid');
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = t('modal.errors.emailRequired');
     } else if (!EMAIL_PATTERN.test(formData.email)) {
-      newErrors.email = 'Enter a valid email address';
+      newErrors.email = t('modal.errors.emailInvalid');
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  }, [formData]);
+  }, [formData, t]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -162,10 +164,10 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                 id="modal-title"
                 className="text-2xl font-bold gradient-text"
               >
-                {title}
+                {t('modal.title')}
               </h2>
               <p className="mt-1 text-sm text-gray-400">
-                Join the future of Forex brokerage technology
+                {t('modal.subtitle')}
               </p>
               <motion.button
                 onClick={onClose}
@@ -195,10 +197,10 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                     <Check className="w-8 h-8 text-green-400" />
                   </motion.div>
                   <h3 className="text-xl font-semibold text-white">
-                    Request Submitted!
+                    {t('modal.submitted')}
                   </h3>
                   <p className="mt-2 text-gray-400">
-                    We'll reach out shortly.
+                    {t('modal.submittedMessage')}
                   </p>
                 </motion.div>
               ) : (
@@ -209,7 +211,7 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Full Name
+                      {t('modal.fullName')}
                     </label>
                     <motion.div
                       className="relative"
@@ -227,7 +229,7 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                         className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${
                           errors.name ? 'border-red-500' : 'border-white/10'
                         } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors`}
-                        placeholder="John Doe"
+                        placeholder={t('modal.namePlaceholder')}
                         aria-describedby={errors.name ? 'name-error' : undefined}
                         aria-invalid={!!errors.name}
                       />
@@ -252,7 +254,7 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                       htmlFor="telegram"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Telegram ID
+                      {t('modal.telegramId')}
                     </label>
                     <motion.div className="relative">
                       <Send className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
@@ -266,7 +268,7 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                         className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${
                           errors.telegram ? 'border-red-500' : 'border-white/10'
                         } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors`}
-                        placeholder="@username"
+                        placeholder={t('modal.telegramPlaceholder')}
                         aria-describedby={errors.telegram ? 'telegram-error' : undefined}
                         aria-invalid={!!errors.telegram}
                       />
@@ -291,7 +293,7 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Email Address
+                      {t('modal.emailAddress')}
                     </label>
                     <motion.div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
@@ -305,7 +307,7 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                         className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${
                           errors.email ? 'border-red-500' : 'border-white/10'
                         } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors`}
-                        placeholder="john@example.com"
+                        placeholder={t('modal.emailPlaceholder')}
                         aria-describedby={errors.email ? 'email-error' : undefined}
                         aria-invalid={!!errors.email}
                       />
@@ -339,15 +341,15 @@ const Modal = ({ isOpen, onClose, title = 'Get Demo Access' }) => {
                           animate={{ rotate: 360 }}
                           transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                         />
-                        Submitting...
+                        {t('modal.submitting')}
                       </span>
                     ) : (
-                      'Request Demo Access'
+                      t('modal.submit')
                     )}
                   </motion.button>
 
                   <p className="text-xs text-gray-500 text-center">
-                    By submitting, you agree to our Terms of Service and Privacy Policy
+                    {t('modal.termsNotice')}
                   </p>
                 </>
               )}

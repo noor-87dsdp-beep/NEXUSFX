@@ -1,14 +1,11 @@
 import React, { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import {
   Rocket,
   Shield,
   Activity,
   BarChart3,
-  Lock,
-  Zap,
-  Check,
-  Globe,
   Layers,
   ChevronDown,
   ChevronUp,
@@ -20,6 +17,9 @@ import {
   Target,
   Lightbulb,
   Award,
+  Globe,
+  Check,
+  Zap,
 } from 'lucide-react';
 import Navbar from './Navbar';
 import Modal from './Modal';
@@ -27,6 +27,7 @@ import TickerTape from './TickerTape';
 import TiltCard from './TiltCard';
 
 const LandingPage = () => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -47,38 +48,38 @@ const LandingPage = () => {
   const features = [
     {
       icon: <Layers className="w-8 h-8" />,
-      title: 'B-Book Dealing Desk',
-      description: '"God Mode" order intervention, manage PnL, set spreads, and custom slippage controls.',
+      title: t('features.bBookDealingDesk.title'),
+      description: t('features.bBookDealingDesk.description'),
       gradient: 'from-yellow-500 to-orange-500',
     },
     {
       icon: <Activity className="w-8 h-8" />,
-      title: 'Real-Time Price Feeds',
-      description: 'Live FX, Gold, and Indices pricing across 50+ assets with instant updates.',
+      title: t('features.realTimePriceFeeds.title'),
+      description: t('features.realTimePriceFeeds.description'),
       gradient: 'from-green-500 to-emerald-500',
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
-      title: 'Complete Admin Panel',
-      description: 'Full control over risk management, orders, and client management in one dashboard.',
+      title: t('features.completeAdminPanel.title'),
+      description: t('features.completeAdminPanel.description'),
       gradient: 'from-cyan-500 to-blue-500',
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: 'CRM & KYC Integration',
-      description: 'Manage leads, documents, verification workflows, and assign agents seamlessly.',
+      title: t('features.crmKycIntegration.title'),
+      description: t('features.crmKycIntegration.description'),
       gradient: 'from-purple-500 to-pink-500',
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: 'Crypto Deposits & Withdrawals',
-      description: 'USDT/ERC20 and TRC20 integration directly to your wallet. No code required.',
+      title: t('features.cryptoDeposits.title'),
+      description: t('features.cryptoDeposits.description'),
       gradient: 'from-indigo-500 to-purple-500',
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: 'White-Label Ready',
-      description: 'Full SaaS integration with your own branding, logo, and colors. Launch instantly.',
+      title: t('features.whiteLabelReady.title'),
+      description: t('features.whiteLabelReady.description'),
       gradient: 'from-rose-500 to-red-500',
     },
   ];
@@ -86,104 +87,98 @@ const LandingPage = () => {
   const steps = [
     {
       step: 1,
-      title: 'Create Account',
-      description: 'Sign up in minutes with our streamlined KYC process.',
+      title: t('howItWorks.step1.title'),
+      description: t('howItWorks.step1.description'),
       icon: <Users className="w-6 h-6" />,
     },
     {
       step: 2,
-      title: 'Fund Your Wallet',
-      description: 'Deposit via crypto, bank transfer, or card.',
+      title: t('howItWorks.step2.title'),
+      description: t('howItWorks.step2.description'),
       icon: <TrendingUp className="w-6 h-6" />,
     },
     {
       step: 3,
-      title: 'Start Trading',
-      description: 'Access global markets and start building wealth.',
+      title: t('howItWorks.step3.title'),
+      description: t('howItWorks.step3.description'),
       icon: <Rocket className="w-6 h-6" />,
     },
   ];
 
   const pricing = [
     {
-      name: 'Pay-As-You-Go',
-      price: '$299',
-      period: '/month',
-      description: 'Perfect for getting started',
+      name: t('pricing.payAsYouGo.name'),
+      price: t('pricing.payAsYouGo.price'),
+      period: t('pricing.payAsYouGo.period'),
+      description: t('pricing.payAsYouGo.description'),
       features: [
-        'Full B-Book dealing desk',
-        'Real-time price feeds (50+ assets)',
-        'Basic admin panel',
-        'Email support',
-        'Crypto deposit/withdrawal',
+        t('pricing.payAsYouGo.features.1'),
+        t('pricing.payAsYouGo.features.2'),
+        t('pricing.payAsYouGo.features.3'),
+        t('pricing.payAsYouGo.features.4'),
+        t('pricing.payAsYouGo.features.5'),
       ],
-      cta: 'Get Started',
+      cta: t('pricing.payAsYouGo.cta'),
       popular: false,
     },
     {
-      name: 'Professional',
-      price: '$799',
-      period: '/month',
-      description: 'For growing brokerages',
+      name: t('pricing.professional.name'),
+      price: t('pricing.professional.price'),
+      period: t('pricing.professional.period'),
+      description: t('pricing.professional.description'),
       features: [
-        'Everything in Pay-As-You-Go',
-        'Complete CRM & KYC system',
-        'Custom risk engine',
-        'Priority 24/7 support',
-        'White-label branding',
-        'Full trade audit trails',
+        t('pricing.professional.features.1'),
+        t('pricing.professional.features.2'),
+        t('pricing.professional.features.3'),
+        t('pricing.professional.features.4'),
+        t('pricing.professional.features.5'),
+        t('pricing.professional.features.6'),
       ],
-      cta: 'Start Free Trial',
+      cta: t('pricing.professional.cta'),
       popular: true,
     },
     {
-      name: 'Lifetime',
-      price: 'One-Time',
-      period: '',
-      description: 'Full ownership, no recurring fees',
+      name: t('pricing.lifetime.name'),
+      price: t('pricing.lifetime.price'),
+      period: t('pricing.lifetime.period'),
+      description: t('pricing.lifetime.description'),
       features: [
-        'Everything in Professional',
-        'Dedicated server setup',
-        'Custom price/fee logic',
-        'Operator overrides',
-        'Priority updates forever',
-        'No monthly payments',
+        t('pricing.lifetime.features.1'),
+        t('pricing.lifetime.features.2'),
+        t('pricing.lifetime.features.3'),
+        t('pricing.lifetime.features.4'),
+        t('pricing.lifetime.features.5'),
+        t('pricing.lifetime.features.6'),
       ],
-      cta: 'Contact Sales',
+      cta: t('pricing.lifetime.cta'),
       popular: false,
     },
   ];
 
   const faqs = [
     {
-      question: 'What is included when I purchase NEXUS FX?',
-      answer:
-        'You get the complete institutional-grade white label Forex brokerage solution including B-Book dealing desk, real-time price feeds for 50+ assets, complete admin panel, CRM & KYC integration, crypto deposit/withdrawal, and full reporting tools.',
+      question: t('faq.q1.question'),
+      answer: t('faq.q1.answer'),
     },
     {
-      question: 'Do I need developers or technical knowledge?',
-      answer:
-        'No code required! We handle updates, security, and hosting for you. Focus on sales and growing your business - you don\'t need developers, servers, or DevOps expertise.',
+      question: t('faq.q2.question'),
+      answer: t('faq.q2.answer'),
     },
     {
-      question: 'What markets and assets can my clients trade?',
-      answer:
-        'NEXUS FX provides access to major Forex pairs, Gold, Indices, and more across 50+ assets. All with real-time price feeds and lightning-fast execution.',
+      question: t('faq.q3.question'),
+      answer: t('faq.q3.answer'),
     },
     {
-      question: 'How does the white-label solution work?',
-      answer:
-        'Our Enterprise and Lifetime plans include full SaaS/white-label integration ready for your own branding, logo, and colors. Backend integration with admin controls, custom risk engine, and operator overrides are all included.',
+      question: t('faq.q4.question'),
+      answer: t('faq.q4.answer'),
     },
     {
-      question: 'What crypto payment options are supported?',
-      answer:
-        'We support USDT deposits and withdrawals via ERC20 and TRC20 networks directly to your wallet. No additional payment processor required.',
+      question: t('faq.q5.question'),
+      answer: t('faq.q5.answer'),
     },
     {
-      question: 'What is the difference between monthly and Lifetime plans?',
-      answer:
-        'Monthly plans offer flexibility with ongoing updates and support. The Lifetime plan is a one-time payment with full ownership, priority updates forever, dedicated server setup, and no recurring monthly fees.',
+      question: t('faq.q6.question'),
+      answer: t('faq.q6.answer'),
     },
   ];
 
@@ -243,7 +238,7 @@ const LandingPage = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
               <span className="text-sm text-gray-300">
-                Trusted by 10,000+ traders worldwide
+                {t('hero.trustedBy')}
               </span>
             </motion.div>
 
@@ -251,18 +246,16 @@ const LandingPage = () => {
               variants={fadeInUp}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
             >
-              <span className="text-white">The Future of</span>
+              <span className="text-white">{t('hero.theFutureOf')}</span>
               <br />
-              <span className="gradient-text">Forex Brokerage</span>
+              <span className="gradient-text">{t('hero.forexBrokerage')}</span>
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
               className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 mb-10"
             >
-              The all-in-one white label brokerage solution. B-Book dealing desk,
-              real-time price feeds, CRM & KYC, crypto payments - everything included.
-              No code required.
+              {t('hero.description')}
             </motion.p>
 
             <motion.div
@@ -275,7 +268,7 @@ const LandingPage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Your Brokerage
+                {t('hero.startYourBrokerage')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
 
@@ -286,7 +279,7 @@ const LandingPage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore Features
+                {t('hero.exploreFeatures')}
                 <ChevronDown className="w-5 h-5" />
               </motion.a>
             </motion.div>
@@ -297,10 +290,10 @@ const LandingPage = () => {
               className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
             >
               {[
-                { value: '$2.5B+', label: 'Daily Volume' },
-                { value: '99.99%', label: 'Uptime' },
-                { value: '<10ms', label: 'Execution' },
-                { value: '50+', label: 'Countries' },
+                { value: '$2.5B+', label: t('hero.dailyVolume') },
+                { value: '99.99%', label: t('hero.uptime') },
+                { value: '<10ms', label: t('hero.execution') },
+                { value: '50+', label: t('hero.countries') },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-2xl sm:text-3xl font-bold gradient-text">
@@ -341,24 +334,22 @@ const LandingPage = () => {
               className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6"
             >
               <Target className="w-4 h-4 text-green-400" />
-              <span className="text-sm text-gray-300">Our Mission</span>
+              <span className="text-sm text-gray-300">{t('mission.badge')}</span>
             </motion.div>
 
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
             >
-              <span className="text-white">Empowering You to Become a</span>{' '}
-              <span className="gradient-text">Platform Operator</span>
+              <span className="text-white">{t('mission.title1')}</span>{' '}
+              <span className="gradient-text">{t('mission.title2')}</span>
             </motion.h2>
 
             <motion.p
               variants={fadeInUp}
               className="max-w-3xl mx-auto text-gray-400 text-lg mb-8"
             >
-              NEXUS FX is a <strong className="text-white">trading platform software provider</strong>, 
-              not a trading service. We provide the complete infrastructure for you to launch and operate 
-              your own Forex brokerage—transforming you from a market participant into a market maker.
+              {t('mission.description')}
             </motion.p>
           </motion.div>
 
@@ -377,12 +368,10 @@ const LandingPage = () => {
                     <Lightbulb className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
-                    What We Provide
+                    {t('mission.whatWeProvide.title')}
                   </h3>
                   <p className="text-gray-400">
-                    A complete, institutional-grade white-label brokerage platform. 
-                    Everything you need to run your own trading business—dealing desk, 
-                    price feeds, CRM, KYC, and payment processing.
+                    {t('mission.whatWeProvide.description')}
                   </p>
                 </div>
               </TiltCard>
@@ -396,12 +385,10 @@ const LandingPage = () => {
                     <Target className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
-                    Our Core Mission
+                    {t('mission.ourCoreMission.title')}
                   </h3>
                   <p className="text-gray-400">
-                    To democratize access to professional trading infrastructure. 
-                    We believe anyone should be able to launch their own brokerage 
-                    without needing technical expertise or massive capital.
+                    {t('mission.ourCoreMission.description')}
                   </p>
                 </div>
               </TiltCard>
@@ -415,12 +402,10 @@ const LandingPage = () => {
                     <Award className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
-                    Your Transformation
+                    {t('mission.yourTransformation.title')}
                   </h3>
                   <p className="text-gray-400">
-                    Stop being just a trader. With NEXUS FX, become a platform operator 
-                    with full control over your brokerage business, your clients, 
-                    and your revenue streams.
+                    {t('mission.yourTransformation.description')}
                   </p>
                 </div>
               </TiltCard>
@@ -443,15 +428,14 @@ const LandingPage = () => {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
             >
-              <span className="text-white">Everything Included in</span>{' '}
-              <span className="gradient-text">Your Brokerage</span>
+              <span className="text-white">{t('features.title1')}</span>{' '}
+              <span className="gradient-text">{t('features.title2')}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="max-w-2xl mx-auto text-gray-400 text-lg"
             >
-              Get instant access to the full institutional-grade white label solution.
-              No code required.
+              {t('features.description')}
             </motion.p>
           </motion.div>
 
@@ -497,15 +481,14 @@ const LandingPage = () => {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
             >
-              <span className="text-white">Get Started in</span>{' '}
-              <span className="gradient-text">3 Simple Steps</span>
+              <span className="text-white">{t('howItWorks.title1')}</span>{' '}
+              <span className="gradient-text">{t('howItWorks.title2')}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="max-w-2xl mx-auto text-gray-400 text-lg"
             >
-              Join thousands of traders who have already discovered the NEXUS FX
-              advantage.
+              {t('howItWorks.description')}
             </motion.p>
           </motion.div>
 
@@ -553,7 +536,7 @@ const LandingPage = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Get Demo Access
+              {t('nav.getDemoAccess')}
             </motion.button>
           </motion.div>
         </div>
@@ -573,15 +556,14 @@ const LandingPage = () => {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
             >
-              <span className="text-white">Simple, Transparent</span>{' '}
-              <span className="gradient-text">Pricing</span>
+              <span className="text-white">{t('pricing.title1')}</span>{' '}
+              <span className="gradient-text">{t('pricing.title2')}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="max-w-2xl mx-auto text-gray-400 text-lg"
             >
-              Choose the plan that fits your trading needs. All plans include our
-              core platform features.
+              {t('pricing.description')}
             </motion.p>
           </motion.div>
 
@@ -604,7 +586,7 @@ const LandingPage = () => {
                   >
                     {plan.popular && (
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-green-500 to-cyan-500 text-white text-sm font-semibold rounded-full">
-                        Most Popular
+                        {t('pricing.mostPopular')}
                       </div>
                     )}
 
@@ -666,14 +648,14 @@ const LandingPage = () => {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
             >
-              <span className="text-white">Frequently Asked</span>{' '}
-              <span className="gradient-text">Questions</span>
+              <span className="text-white">{t('faq.title1')}</span>{' '}
+              <span className="gradient-text">{t('faq.title2')}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-gray-400 text-lg"
             >
-              Got questions? We've got answers.
+              {t('faq.description')}
             </motion.p>
           </motion.div>
 
@@ -743,7 +725,7 @@ const LandingPage = () => {
               >
                 <Clock className="w-4 h-4 text-green-400" />
                 <span className="text-sm text-gray-300">
-                  Limited spots available
+                  {t('cta.badge')}
                 </span>
               </motion.div>
 
@@ -751,17 +733,16 @@ const LandingPage = () => {
                 variants={fadeInUp}
                 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
               >
-                <span className="text-white">Ready to Transform</span>
+                <span className="text-white">{t('cta.title1')}</span>
                 <br />
-                <span className="gradient-text">Your Trading Journey?</span>
+                <span className="gradient-text">{t('cta.title2')}</span>
               </motion.h2>
 
               <motion.p
                 variants={fadeInUp}
                 className="max-w-xl mx-auto text-gray-400 text-lg mb-8"
               >
-                Join thousands of traders and brokerages who trust NEXUS FX for
-                their success. Start your free trial today.
+                {t('cta.description')}
               </motion.p>
 
               <motion.div
@@ -774,13 +755,13 @@ const LandingPage = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Get Demo Access
+                  {t('nav.getDemoAccess')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
 
                 <div className="flex items-center gap-2 text-gray-400">
                   <Headphones className="w-5 h-5" />
-                  <span>24/7 Support Available</span>
+                  <span>{t('cta.supportAvailable')}</span>
                 </div>
               </motion.div>
             </div>
@@ -802,27 +783,27 @@ const LandingPage = () => {
 
             <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
               <a href="#mission" onClick={(e) => scrollToSection(e, '#mission')} className="hover:text-green-400 transition-colors">
-                Mission
+                {t('footer.mission')}
               </a>
               <a href="#features" onClick={(e) => scrollToSection(e, '#features')} className="hover:text-green-400 transition-colors">
-                Features
+                {t('footer.features')}
               </a>
               <a href="#pricing" onClick={(e) => scrollToSection(e, '#pricing')} className="hover:text-green-400 transition-colors">
-                Pricing
+                {t('footer.pricing')}
               </a>
               <a href="#faq" onClick={(e) => scrollToSection(e, '#faq')} className="hover:text-green-400 transition-colors">
-                FAQ
+                {t('footer.faq')}
               </a>
               <span className="hover:text-green-400 transition-colors cursor-pointer">
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </span>
               <span className="hover:text-green-400 transition-colors cursor-pointer">
-                Terms of Service
+                {t('footer.termsOfService')}
               </span>
             </nav>
 
             <p className="text-sm text-gray-500">
-              © {new Date().getFullYear()} NEXUS FX. All rights reserved.
+              {t('footer.copyright', { year: new Date().getFullYear() })}
             </p>
           </div>
         </div>

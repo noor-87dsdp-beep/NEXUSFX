@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "mission": "使命",
+    "features": "功能特点",
+    "howItWorks": "运作方式",
+    "pricing": "价格",
+    "faq": "常见问题",
+    "getDemoAccess": "获取演示访问"
+  },
+  "hero": {
+    "trustedBy": "全球10,000+交易者信赖",
+    "theFutureOf": "外汇经纪的",
+    "forexBrokerage": "未来",
+    "description": "一站式白标经纪解决方案。B-Book交易台、实时价格推送、CRM和KYC、加密支付 - 一切包含在内。无需编码。",
+    "startYourBrokerage": "开始您的经纪业务",
+    "exploreFeatures": "探索功能",
+    "dailyVolume": "日交易量",
+    "uptime": "正常运行时间",
+    "execution": "执行速度",
+    "countries": "国家"
+  },
+  "mission": {
+    "badge": "我们的使命",
+    "title1": "赋能您成为",
+    "title2": "平台运营商",
+    "description": "NEXUS FX是交易平台软件提供商，而非交易服务。我们提供完整的基础设施，让您能够启动并运营自己的外汇经纪业务——将您从市场参与者转变为市场做市商。",
+    "whatWeProvide": {
+      "title": "我们提供什么",
+      "description": "完整的机构级白标经纪平台。运营您自己的交易业务所需的一切——交易台、价格推送、CRM、KYC和支付处理。"
+    },
+    "ourCoreMission": {
+      "title": "我们的核心使命",
+      "description": "让专业交易基础设施的访问民主化。我们相信任何人都应该能够启动自己的经纪业务，无需技术专长或大量资金。"
+    },
+    "yourTransformation": {
+      "title": "您的转变",
+      "description": "不要只做交易者。通过NEXUS FX，成为平台运营商，完全控制您的经纪业务、您的客户和您的收入来源。"
+    }
+  },
+  "features": {
+    "title1": "您的经纪业务",
+    "title2": "一切包含",
+    "description": "立即获得完整的机构级白标解决方案。无需编码。",
+    "bBookDealingDesk": {
+      "title": "B-Book交易台",
+      "description": "\"上帝模式\"订单干预、管理盈亏、设置点差和自定义滑点控制。"
+    },
+    "realTimePriceFeeds": {
+      "title": "实时价格推送",
+      "description": "50+资产的外汇、黄金和指数实时定价，即时更新。"
+    },
+    "completeAdminPanel": {
+      "title": "完整管理面板",
+      "description": "在一个仪表板中完全控制风险管理、订单和客户管理。"
+    },
+    "crmKycIntegration": {
+      "title": "CRM和KYC集成",
+      "description": "无缝管理潜在客户、文档、验证工作流程和分配代理。"
+    },
+    "cryptoDeposits": {
+      "title": "加密存取款",
+      "description": "USDT/ERC20和TRC20直接集成到您的钱包。无需编码。"
+    },
+    "whiteLabelReady": {
+      "title": "白标就绪",
+      "description": "使用您自己的品牌、标志和颜色进行完整SaaS集成。即时启动。"
+    }
+  },
+  "howItWorks": {
+    "title1": "开始",
+    "title2": "只需3个简单步骤",
+    "description": "加入已经发现NEXUS FX优势的数千名交易者。",
+    "step1": {
+      "title": "创建账户",
+      "description": "通过我们精简的KYC流程在几分钟内注册。"
+    },
+    "step2": {
+      "title": "为钱包充值",
+      "description": "通过加密货币、银行转账或卡充值。"
+    },
+    "step3": {
+      "title": "开始交易",
+      "description": "访问全球市场，开始积累财富。"
+    }
+  },
+  "pricing": {
+    "title1": "简单、透明的",
+    "title2": "价格",
+    "description": "选择适合您交易需求的计划。所有计划都包含我们的核心平台功能。",
+    "mostPopular": "最受欢迎",
+    "payAsYouGo": {
+      "name": "按需付费",
+      "price": "$299",
+      "period": "/月",
+      "description": "适合入门",
+      "features": {
+        "1": "完整B-Book交易台",
+        "2": "实时价格推送（50+资产）",
+        "3": "基础管理面板",
+        "4": "邮件支持",
+        "5": "加密存取款"
+      },
+      "cta": "开始使用"
+    },
+    "professional": {
+      "name": "专业版",
+      "price": "$799",
+      "period": "/月",
+      "description": "适合成长中的经纪商",
+      "features": {
+        "1": "按需付费的所有功能",
+        "2": "完整CRM和KYC系统",
+        "3": "自定义风险引擎",
+        "4": "优先24/7支持",
+        "5": "白标品牌",
+        "6": "完整交易审计跟踪"
+      },
+      "cta": "开始免费试用"
+    },
+    "lifetime": {
+      "name": "终身版",
+      "price": "一次性",
+      "period": "",
+      "description": "完全所有权，无重复费用",
+      "features": {
+        "1": "专业版的所有功能",
+        "2": "专用服务器设置",
+        "3": "自定义价格/费用逻辑",
+        "4": "运营商覆盖",
+        "5": "永久优先更新",
+        "6": "无月度付款"
+      },
+      "cta": "联系销售"
+    }
+  },
+  "faq": {
+    "title1": "常见",
+    "title2": "问题",
+    "description": "有问题？我们有答案。",
+    "q1": {
+      "question": "购买NEXUS FX时包含什么？",
+      "answer": "您将获得完整的机构级白标外汇经纪解决方案，包括B-Book交易台、50+资产的实时价格推送、完整管理面板、CRM和KYC集成、加密存取款和完整报告工具。"
+    },
+    "q2": {
+      "question": "我需要开发人员或技术知识吗？",
+      "answer": "无需编码！我们为您处理更新、安全和托管。专注于销售和发展您的业务——您不需要开发人员、服务器或DevOps专业知识。"
+    },
+    "q3": {
+      "question": "我的客户可以交易哪些市场和资产？",
+      "answer": "NEXUS FX提供主要外汇货币对、黄金、指数等50+资产的访问。全部具有实时价格推送和闪电般的执行速度。"
+    },
+    "q4": {
+      "question": "白标解决方案如何运作？",
+      "answer": "我们的企业版和终身版计划包含完整的SaaS/白标集成，可使用您自己的品牌、标志和颜色。包括与管理控制、自定义风险引擎和运营商覆盖的后端集成。"
+    },
+    "q5": {
+      "question": "支持哪些加密支付选项？",
+      "answer": "我们支持通过ERC20和TRC20网络直接存取USDT到您的钱包。无需额外的支付处理器。"
+    },
+    "q6": {
+      "question": "月度计划和终身计划有什么区别？",
+      "answer": "月度计划提供持续更新和支持的灵活性。终身计划是一次性付款，完全所有权，永久优先更新，专用服务器设置，无重复月费。"
+    }
+  },
+  "cta": {
+    "badge": "名额有限",
+    "title1": "准备好转变",
+    "title2": "您的交易之旅？",
+    "description": "加入信任NEXUS FX助力成功的数千名交易者和经纪商。今天就开始您的免费试用。",
+    "supportAvailable": "24/7全天候支持"
+  },
+  "footer": {
+    "mission": "使命",
+    "features": "功能",
+    "pricing": "价格",
+    "faq": "常见问题",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "copyright": "© {{year}} NEXUS FX. 保留所有权利。"
+  },
+  "modal": {
+    "title": "获取演示访问",
+    "subtitle": "加入外汇经纪技术的未来",
+    "fullName": "全名",
+    "telegramId": "Telegram ID",
+    "emailAddress": "电子邮件地址",
+    "namePlaceholder": "张三",
+    "telegramPlaceholder": "@用户名",
+    "emailPlaceholder": "john@example.com",
+    "submit": "请求演示访问",
+    "submitting": "提交中...",
+    "submitted": "请求已提交！",
+    "submittedMessage": "我们将很快与您联系。",
+    "termsNotice": "提交即表示您同意我们的服务条款和隐私政策",
+    "errors": {
+      "nameRequired": "姓名必填",
+      "nameMinLength": "姓名至少需要2个字符",
+      "telegramRequired": "Telegram ID必填",
+      "telegramInvalid": "请输入有效的Telegram用户名（@username）或ID",
+      "emailRequired": "电子邮件必填",
+      "emailInvalid": "请输入有效的电子邮件地址"
+    }
+  },
+  "ticker": {
+    "liveMarketPrices": "实时市场价格更新中"
+  },
+  "language": {
+    "en": "English",
+    "bn": "বাংলা",
+    "zh": "中文",
+    "km": "ភាសាខ្មែរ"
+  }
+}
