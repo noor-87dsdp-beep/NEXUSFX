@@ -11,7 +11,7 @@
     "trustedBy": "Trusted by 10,000+ traders worldwide",
     "theFutureOf": "The Future of",
     "forexBrokerage": "Forex Brokerage",
-    "description": "The all-in-one white label brokerage solution. B-Book dealing desk, real-time price feeds, CRM & KYC, crypto payments - everything included. No code required.",
+    "description": "Experience the premium all-in-one white label brokerage solution. B-Book dealing desk, real-time price feeds, CRM & KYC, crypto payments - everything included. No code required.",
     "startYourBrokerage": "Start Your Brokerage",
     "exploreFeatures": "Explore Features",
     "dailyVolume": "Daily Volume",
@@ -23,7 +23,7 @@
     "badge": "Our Mission",
     "title1": "Empowering You to Become a",
     "title2": "Platform Operator",
-    "description": "NEXUS FX is a trading platform software provider, not a trading service. We provide the complete infrastructure for you to launch and operate your own Forex brokerage—transforming you from a market participant into a market maker.",
+    "description": "Nexus FX Demo is a premium trading platform software provider, not a trading service. We provide the complete infrastructure for you to launch and operate your own Forex brokerage—transforming you from a market participant into a market maker.",
     "whatWeProvide": {
       "title": "What We Provide",
       "description": "A complete, institutional-grade white-label brokerage platform. Everything you need to run your own trading business—dealing desk, price feeds, CRM, KYC, and payment processing."
@@ -34,7 +34,7 @@
     },
     "yourTransformation": {
       "title": "Your Transformation",
-      "description": "Stop being just a trader. With NEXUS FX, become a platform operator with full control over your brokerage business, your clients, and your revenue streams."
+      "description": "Stop being just a trader. With Nexus FX Demo, become a platform operator with full control over your brokerage business, your clients, and your revenue streams."
     }
   },
   "features": {
@@ -69,7 +69,7 @@
   "howItWorks": {
     "title1": "Get Started in",
     "title2": "3 Simple Steps",
-    "description": "Join thousands of traders who have already discovered the NEXUS FX advantage.",
+    "description": "Join thousands of traders who have already discovered the Nexus FX Demo advantage.",
     "step1": {
       "title": "Create Account",
       "description": "Sign up in minutes with our streamlined KYC process."
@@ -138,7 +138,7 @@
     "title2": "Questions",
     "description": "Got questions? We've got answers.",
     "q1": {
-      "question": "What is included when I purchase NEXUS FX?",
+      "question": "What is included when I purchase Nexus FX Demo?",
       "answer": "You get the complete institutional-grade white label Forex brokerage solution including B-Book dealing desk, real-time price feeds for 50+ assets, complete admin panel, CRM & KYC integration, crypto deposit/withdrawal, and full reporting tools."
     },
     "q2": {
@@ -147,7 +147,7 @@
     },
     "q3": {
       "question": "What markets and assets can my clients trade?",
-      "answer": "NEXUS FX provides access to major Forex pairs, Gold, Indices, and more across 50+ assets. All with real-time price feeds and lightning-fast execution."
+      "answer": "Nexus FX Demo provides access to major Forex pairs, Gold, Indices, and more across 50+ assets. All with real-time price feeds and lightning-fast execution."
     },
     "q4": {
       "question": "How does the white-label solution work?",
@@ -166,7 +166,7 @@
     "badge": "Limited spots available",
     "title1": "Ready to Transform",
     "title2": "Your Trading Journey?",
-    "description": "Join thousands of traders and brokerages who trust NEXUS FX for their success. Start your free trial today.",
+    "description": "Join thousands of traders and brokerages who trust Nexus FX Demo for their success. Start your free trial today.",
     "supportAvailable": "24/7 Support Available"
   },
   "footer": {
@@ -176,7 +176,7 @@
     "faq": "FAQ",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "copyright": "© {{year}} NEXUS FX. All rights reserved."
+    "copyright": "© {{year}} Nexus FX Demo. All rights reserved."
   },
   "modal": {
     "title": "Get Demo Access",
