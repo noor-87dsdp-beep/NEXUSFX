@@ -48,13 +48,13 @@ const TickerTape = () => {
 
   return (
     <section
-      className="relative py-4 overflow-hidden bg-black/40 border-y border-white/5"
+      className="relative py-4 overflow-hidden bg-midnight-950/60 border-y border-white/5"
       aria-label="Live market ticker"
       role="marquee"
     >
       {/* Gradient overlays for fade effect */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-midnight-950/90 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-midnight-950/90 to-transparent z-10 pointer-events-none" />
 
       {/* Ticker container */}
       <div className="flex animate-ticker" style={{ width: 'max-content' }}>
@@ -74,7 +74,7 @@ const TickerTape = () => {
               initial={{ opacity: 0.5 }}
               animate={{ opacity: 1 }}
               className={`font-mono text-sm ${
-                item.isUp ? 'text-green-400' : 'text-red-400'
+                item.isUp ? 'text-accent-emerald' : 'text-highlight-magenta'
               }`}
             >
               {item.price.toLocaleString('en-US', {
@@ -83,7 +83,7 @@ const TickerTape = () => {
             </motion.span>
             <span
               className={`flex items-center gap-1 text-xs font-medium ${
-                item.isUp ? 'text-green-400' : 'text-red-400'
+                item.isUp ? 'text-accent-emerald' : 'text-highlight-magenta'
               }`}
               aria-label={`${item.isUp ? 'Up' : 'Down'} ${Math.abs(item.change)}%`}
             >

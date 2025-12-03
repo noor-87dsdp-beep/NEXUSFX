@@ -126,7 +126,7 @@ const Modal = ({ isOpen, onClose }) => {
   };
 
   const inputVariants = {
-    focus: { scale: 1.02, boxShadow: '0 0 0 2px rgba(34, 197, 94, 0.5)' },
+    focus: { scale: 1.02, boxShadow: '0 0 0 2px rgba(16, 185, 129, 0.5)' },
   };
 
   return (
@@ -144,7 +144,7 @@ const Modal = ({ isOpen, onClose }) => {
           {/* Backdrop */}
           <motion.div
             variants={backdropVariants}
-            className="absolute inset-0 bg-black/70 backdrop-blur-md"
+            className="absolute inset-0 bg-midnight-950/80 backdrop-blur-md"
             onClick={onClose}
             aria-hidden="true"
           />
@@ -153,10 +153,10 @@ const Modal = ({ isOpen, onClose }) => {
           <motion.div
             ref={modalRef}
             variants={modalVariants}
-            className="relative w-full max-w-md bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-green-500/10 overflow-hidden"
+            className="relative w-full max-w-md bg-gradient-to-br from-midnight-900/95 to-midnight-950/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-accent-emerald/10 overflow-hidden"
           >
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-cyan-500/5 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-accent-emerald/5 via-transparent to-highlight-magenta/5 pointer-events-none" />
 
             {/* Header */}
             <div className="relative px-6 pt-6 pb-4 border-b border-white/10">
@@ -192,9 +192,9 @@ const Modal = ({ isOpen, onClose }) => {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: 'spring', delay: 0.2 }}
-                    className="w-16 h-16 mx-auto mb-4 bg-green-500/20 rounded-full flex items-center justify-center"
+                    className="w-16 h-16 mx-auto mb-4 bg-accent-emerald/20 rounded-full flex items-center justify-center"
                   >
-                    <Check className="w-8 h-8 text-green-400" />
+                    <Check className="w-8 h-8 text-accent-emerald" />
                   </motion.div>
                   <h3 className="text-xl font-semibold text-white">
                     {t('modal.submitted')}
@@ -226,9 +226,9 @@ const Modal = ({ isOpen, onClose }) => {
                         onChange={handleChange('name')}
                         variants={inputVariants}
                         whileFocus="focus"
-                        className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${
+                        className={`w-full pl-10 pr-4 py-3 bg-midnight-900/50 border ${
                           errors.name ? 'border-red-500' : 'border-white/10'
-                        } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors`}
+                        } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-emerald transition-colors`}
                         placeholder={t('modal.namePlaceholder')}
                         aria-describedby={errors.name ? 'name-error' : undefined}
                         aria-invalid={!!errors.name}
@@ -265,9 +265,9 @@ const Modal = ({ isOpen, onClose }) => {
                         onChange={handleChange('telegram')}
                         variants={inputVariants}
                         whileFocus="focus"
-                        className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${
+                        className={`w-full pl-10 pr-4 py-3 bg-midnight-900/50 border ${
                           errors.telegram ? 'border-red-500' : 'border-white/10'
-                        } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors`}
+                        } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-emerald transition-colors`}
                         placeholder={t('modal.telegramPlaceholder')}
                         aria-describedby={errors.telegram ? 'telegram-error' : undefined}
                         aria-invalid={!!errors.telegram}
@@ -304,9 +304,9 @@ const Modal = ({ isOpen, onClose }) => {
                         onChange={handleChange('email')}
                         variants={inputVariants}
                         whileFocus="focus"
-                        className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${
+                        className={`w-full pl-10 pr-4 py-3 bg-midnight-900/50 border ${
                           errors.email ? 'border-red-500' : 'border-white/10'
-                        } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors`}
+                        } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-emerald transition-colors`}
                         placeholder={t('modal.emailPlaceholder')}
                         aria-describedby={errors.email ? 'email-error' : undefined}
                         aria-invalid={!!errors.email}
@@ -330,7 +330,7 @@ const Modal = ({ isOpen, onClose }) => {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 px-6 bg-gradient-to-r from-green-500 to-cyan-500 text-white font-semibold rounded-lg shadow-lg shadow-green-500/25 hover:shadow-green-500/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                    className="w-full py-3 px-6 bg-gradient-to-r from-accent-emerald to-accent-cyan text-white font-semibold rounded-lg shadow-lg shadow-accent-emerald/25 hover:shadow-accent-emerald/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >

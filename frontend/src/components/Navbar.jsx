@@ -57,7 +57,7 @@ const Navbar = ({ onOpenModal }) => {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-black/60 backdrop-blur-xl shadow-lg shadow-green-500/10 border-b border-white/10'
+            ? 'bg-midnight-950/80 backdrop-blur-xl shadow-lg shadow-accent-emerald/10 border-b border-white/10'
             : 'bg-transparent backdrop-blur-sm'
         }`}
         role="navigation"
@@ -73,9 +73,9 @@ const Navbar = ({ onOpenModal }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Zap className="w-6 h-6 md:w-8 md:h-8 text-green-400" />
-              <span className="gradient-text">NEXUS</span>
-              <span className="text-white">FX</span>
+              <Zap className="w-6 h-6 md:w-8 md:h-8 text-accent-cyan" />
+              <span className="gradient-text">Nexus FX</span>
+              <span className="text-highlight-magenta text-sm font-medium ml-1">Demo</span>
             </motion.a>
 
             {/* Desktop Navigation */}
@@ -86,7 +86,7 @@ const Navbar = ({ onOpenModal }) => {
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
                   onKeyDown={(e) => handleKeyDown(e, link.href)}
-                  className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-sm font-medium"
+                  className="text-gray-300 hover:text-accent-emerald transition-colors duration-200 text-sm font-medium"
                   whileHover={{ y: -2 }}
                   tabIndex={0}
                 >
@@ -96,7 +96,7 @@ const Navbar = ({ onOpenModal }) => {
               <LanguageSelector />
               <motion.button
                 onClick={onOpenModal}
-                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-cyan-500 text-white font-semibold rounded-lg shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-200"
+                className="px-6 py-2.5 bg-gradient-to-r from-accent-emerald to-accent-cyan text-white font-semibold rounded-lg shadow-lg shadow-accent-emerald/25 hover:shadow-accent-emerald/40 transition-all duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -128,7 +128,7 @@ const Navbar = ({ onOpenModal }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-midnight-950/80 backdrop-blur-sm z-40 md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
               aria-hidden="true"
             />
@@ -140,7 +140,7 @@ const Navbar = ({ onOpenModal }) => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-black/90 backdrop-blur-xl border-l border-white/10 z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-midnight-950/95 backdrop-blur-xl border-l border-white/10 z-50 md:hidden"
               role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation menu"
@@ -155,7 +155,7 @@ const Navbar = ({ onOpenModal }) => {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="text-lg text-gray-300 hover:text-green-400 py-3 border-b border-white/10 transition-colors"
+                      className="text-lg text-gray-300 hover:text-accent-emerald py-3 border-b border-white/10 transition-colors"
                     >
                       {link.label}
                     </motion.a>
@@ -179,7 +179,7 @@ const Navbar = ({ onOpenModal }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.45 }}
-                  className="mt-6 w-full px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-500 text-white font-semibold rounded-lg shadow-lg"
+                  className="mt-6 w-full px-6 py-3 bg-gradient-to-r from-accent-emerald to-accent-cyan text-white font-semibold rounded-lg shadow-lg"
                 >
                   {t('nav.getDemoAccess')}
                 </motion.button>
