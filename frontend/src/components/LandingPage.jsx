@@ -107,21 +107,6 @@ const LandingPage = () => {
 
   const pricing = [
     {
-      name: t('pricing.payAsYouGo.name'),
-      price: t('pricing.payAsYouGo.price'),
-      period: t('pricing.payAsYouGo.period'),
-      description: t('pricing.payAsYouGo.description'),
-      features: [
-        t('pricing.payAsYouGo.features.1'),
-        t('pricing.payAsYouGo.features.2'),
-        t('pricing.payAsYouGo.features.3'),
-        t('pricing.payAsYouGo.features.4'),
-        t('pricing.payAsYouGo.features.5'),
-      ],
-      cta: t('pricing.payAsYouGo.cta'),
-      popular: false,
-    },
-    {
       name: t('pricing.professional.name'),
       price: t('pricing.professional.price'),
       period: t('pricing.professional.period'),
@@ -572,7 +557,7 @@ const LandingPage = () => {
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
           >
             {pricing.map((plan, index) => (
               <motion.div key={index} variants={fadeInUp}>

@@ -88,27 +88,13 @@
     "title2": "Pricing",
     "description": "Choose the plan that fits your trading needs. All plans include our core platform features.",
     "mostPopular": "Most Popular",
-    "payAsYouGo": {
-      "name": "Pay-As-You-Go",
-      "price": "$299",
-      "period": "/month",
-      "description": "Perfect for getting started",
-      "features": {
-        "1": "Full B-Book dealing desk",
-        "2": "Real-time price feeds (50+ assets)",
-        "3": "Basic admin panel",
-        "4": "Email support",
-        "5": "Crypto deposit/withdrawal"
-      },
-      "cta": "Get Started"
-    },
     "professional": {
       "name": "Professional",
       "price": "$799",
       "period": "/month",
       "description": "For growing brokerages",
       "features": {
-        "1": "Everything in Pay-As-You-Go",
+        "1": "Full B-Book dealing desk",
         "2": "Complete CRM & KYC system",
         "3": "Custom risk engine",
         "4": "Priority 24/7 support",
