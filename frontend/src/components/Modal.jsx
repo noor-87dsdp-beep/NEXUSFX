@@ -83,18 +83,37 @@ const Modal = ({ isOpen, onClose }) => {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      // Call the Vercel serverless function
+      const response = await fetch('/api/submit-demo-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      const data = await response.json();
 
-    // Reset form after delay
-    setTimeout(() => {
-      setFormData({ name: '', telegram: '', email: '' });
-      setIsSubmitted(false);
-      onClose();
-    }, 2000);
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit demo request');
+      }
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+
+      // Reset form after delay
+      setTimeout(() => {
+        setFormData({ name: '', telegram: '', email: '' });
+        setIsSubmitted(false);
+        onClose();
+      }, 2000);
+    } catch (error) {
+      console.error('Error submitting demo request:', error);
+      setIsSubmitting(false);
+      // Show error to user (you can enhance this with better error handling)
+      setErrors({ submit: error.message || 'Failed to submit request. Please try again.' });
+    }
   };
 
   const handleChange = (field) => (e) => {
@@ -205,6 +224,20 @@ const Modal = ({ isOpen, onClose }) => {
                 </motion.div>
               ) : (
                 <>
+                  {/* General submission error */}
+                  {errors.submit && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg"
+                    >
+                      <p className="text-sm text-red-400 flex items-center gap-2">
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.submit}
+                      </p>
+                    </motion.div>
+                  )}
+
                   {/* Name Field */}
                   <div>
                     <label
