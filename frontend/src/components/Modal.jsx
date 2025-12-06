@@ -102,8 +102,11 @@ const Modal = ({ isOpen, onClose }) => {
       setIsSubmitting(false);
       setIsSubmitted(true);
 
-      // Reset form after delay
+      // Reset form after delay and redirect to trading platform
       setTimeout(() => {
+        // Open trading platform in new tab
+        window.open('https://tradingceo.me', '_blank', 'noopener,noreferrer');
+        
         setFormData({ name: '', telegram: '', email: '' });
         setIsSubmitted(false);
         onClose();
