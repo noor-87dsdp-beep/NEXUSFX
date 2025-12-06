@@ -111,7 +111,6 @@ const Modal = ({ isOpen, onClose }) => {
     } catch (error) {
       console.error('Error submitting demo request:', error);
       setIsSubmitting(false);
-      // Show error to user (you can enhance this with better error handling)
       setErrors({ submit: error.message || 'Failed to submit request. Please try again.' });
     }
   };

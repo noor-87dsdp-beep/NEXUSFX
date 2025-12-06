@@ -5,6 +5,8 @@
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+// Allow overriding allowed origins via environment variable
+const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS || '*';
 
 /**
  * Validates the incoming form data
@@ -75,8 +77,12 @@ async function sendTelegramNotification(formData) {
  * Main handler for the serverless function
  */
 export default async function handler(req, res) {
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // Set CORS headers - configurable via ALLOWED_ORIGINS environment variable
+  // In production, set ALLOWED_ORIGINS to your domain (e.g., 'https://yourdomain.com')
+  const origin = req.headers.origin;
+  if (ALLOWED_ORIGINS === '*' || (origin && ALLOWED_ORIGINS.includes(origin))) {
+    res.setHeader('Access-Control-Allow-Origin', origin || '*');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
