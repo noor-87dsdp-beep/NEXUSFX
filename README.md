@@ -136,6 +136,19 @@ This project integrates with Telegram Bot API to send instant notifications when
 
 #### 4. Test the Integration
 
+**Quick Test with Test Script (Recommended):**
+```bash
+# Set your environment variables
+export TELEGRAM_BOT_TOKEN="your_bot_token"
+export TELEGRAM_CHAT_ID="your_chat_id"
+
+# Run the test script
+node test-telegram.js
+```
+
+This will send a test notification to your Telegram to verify the setup is working correctly.
+
+**Full Integration Test:**
 1. Start your development server: `npm run dev`
 2. Open the application in your browser
 3. Click "Get Demo Access" button
