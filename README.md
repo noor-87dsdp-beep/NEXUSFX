@@ -1,10 +1,10 @@
-# NEXUS FX - All-in-One Brokerage Platform
+# Nexus FX Demo - Premium Forex Brokerage Platform
 
-The future of Forex brokerage. Launch your fully licensed brokerage or trade with institutional-grade tools.
+The premium flagship demo showcasing the future of Forex brokerage technology. Experience institutional-grade trading platform features with a stunning, modern interface.
 
-## What is NEXUS FX?
+## What is Nexus FX Demo?
 
-**NEXUS FX is a trading platform software provider, not a trading service.** We empower entrepreneurs and businesses to become their own trading platform operators by providing a complete, institutional-grade white-label brokerage solution.
+**Nexus FX Demo is a premium showcase of white-label brokerage platform software.** This demo demonstrates how entrepreneurs and businesses can launch and operate their own trading platform with our complete, institutional-grade solution.
 
 ### Our Mission
 
@@ -12,7 +12,7 @@ To democratize access to professional trading infrastructure by providing a turn
 
 ### Core Value Proposition
 
-- **Become an Operator, Not Just a Trader**: NEXUS FX transforms you from a market participant into a market maker, giving you the tools to run your own brokerage business.
+- **Become an Operator, Not Just a Trader**: Nexus FX Demo transforms you from a market participant into a market maker, giving you the tools to run your own brokerage business.
 - **Zero Technical Barrier**: Launch your brokerage with no coding required. We handle updates, security, and infrastructure so you can focus on growing your business.
 - **Complete Solution**: Everything you need is included—from dealing desk and price feeds to CRM, KYC, and payment processing.
 
@@ -23,9 +23,19 @@ To democratize access to professional trading infrastructure by providing a turn
 3. **Independence**: Our customers should have full control and ownership of their brokerage operations.
 4. **Reliability**: Mission-critical trading systems require 99.99% uptime and sub-10ms execution.
 
+## Premium Design System
+
+This demo features a state-of-the-art design inspired by high-end SaaS platforms like Vercel, Linear, Revolut, and Apple:
+
+- **Deep Midnight Blue Base**: Professional, trustworthy foundation
+- **Emerald/Cyan Accents**: Energetic, modern highlights
+- **Magenta Highlights**: Premium, attention-grabbing accents
+- **Glassmorphism Effects**: Modern, layered visual depth
+- **Refined Gradients & Shadows**: Polished, high-value aesthetic
+
 ## Everything Included
 
-When you purchase from NEXUS FX, you gain instant access to the full institutional-grade white label Forex brokerage solution:
+When you purchase the full Nexus FX platform, you gain instant access to the complete institutional-grade white label Forex brokerage solution:
 
 ### Full Feature Set
 
@@ -40,12 +50,12 @@ When you purchase from NEXUS FX, you gain instant access to the full institution
 ### White-Label Integration
 
 - Full SaaS/white-label integration (ready for your own branding/logo/colors)
-- Backend integration with NEXUS FX admin controls
+- Backend integration with admin controls
 - Enterprise-level server/cloud deployment or dedicated server setup
 - Custom risk engine, price/fee logic, and operator overrides
 - Priority support & updates (especially for Lifetime license holders)
 
-### Why Choose NEXUS FX?
+### Why Choose Nexus FX?
 
 - We handle updates, security, and hosting for you
 - Focus on sales: you don't need developers, servers, or DevOps
@@ -190,4 +200,4 @@ When a demo request is submitted, you'll receive a Telegram message with:
 
 ## License
 
-All rights reserved. © NEXUS FX
+All rights reserved. © Nexus FX Demo
